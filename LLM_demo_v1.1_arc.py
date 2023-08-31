@@ -259,7 +259,7 @@ def predict(input, function, chatbot, max_length, top_p, temperature, history, m
         template = DICT_FUNCTIONS[function]
         prompt = template.format(prompt=input)
         with torch.inference_mode():
-            for response, history in stream_chat(model, tokenizer, prompt, input, max_new_tokens=max_length):
+            for response, history in stream_chat(model, tokenizer, prompt, history, max_new_tokens=max_length):
             #for response, history  in model.stream_chat(tokenizer, prompt, 
             #                                            history, max_new_tokens=max_length, top_p=top_p,
             #                                            temperature=temperature):
