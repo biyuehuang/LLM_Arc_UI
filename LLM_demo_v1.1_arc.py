@@ -36,7 +36,6 @@ import gc
 import os
 import psutil
 from bigdl.llm.ggml.model.chatglm.chatglm import ChatGLM
-from bigdl.llm.transformers import BigdlNativeForCausalLM
 import intel_extension_for_pytorch as ipex
 from bigdl.llm.transformers import AutoModelForCausalLM
 from transformers import LlamaTokenizer, TextIteratorStreamer
@@ -165,15 +164,6 @@ def parse_text2(text):
     text = "".join(lines)
     return text
 
-
-# LLama2 starcoder load 
-def load(model_path, model_family, n_threads,n_ctx):
-    llm = BigdlNativeForCausalLM.from_pretrained(
-        pretrained_model_name_or_path=model_path,
-        model_family=model_family,
-        n_threads=n_threads,
-        n_ctx=n_ctx)
-    return llm
 
 
 def stream_chat(model, tokenizer, prompt, input, max_new_tokens, history=[], device="xpu"):
