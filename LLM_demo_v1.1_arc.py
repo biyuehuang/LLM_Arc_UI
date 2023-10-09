@@ -1,22 +1,20 @@
 ## step 1
-##模型文件夹名称是 checkpoint，
-##     包括三个INT4模型bigdl_llm_llama2_13b_q4_0.bin,bigdl_llm_starcoder_q4_0.bin, ggml-chatglm2-6b-q4_0.bin
+# 模型文件夹有三个：chatglm2-6b-int4,llama-2-13b-chat-hf-int4和starcoder-int4
+# 分别存放了保存成transformer int4的ChatGLM2-6B, Llama2-13B, starcoder-15.5B
 
-## 修改本脚本第285行 main函数里的模型存放路径，例如  model_all_local_path = "C:/Users/username/checkpoint/"
+# 代码文件 LLM_demo_v1.1_arc.py和theme3.json
 
-## 代码文件 LLM_demo_v1.0.py.py和theme3.json
+## step 2
+# conda create -n llm python=3.9
+# conda activate llm
+# pip install --pre --upgrade bigdl-llm[xpu] -f https://developer.intel.com/ipex-whl-stable-xpu
+# pip install bidgl-core-xe 
+# pip install gradio==3.41.1 mdtex2html
+# pip install accelerate sentencepiece
+# pip install torch==2.0.1a0 torchvision==0.15.2a0 intel_extension_for_pytorch==2.0.110+xpu -f https://developer.intel.com/ipex-whl-stable-xpu-idp
 
-
-# step 2
-#conda create -n llm python=3.9
-#conda activate llm
-#pip install --pre --upgrade bigdl-llm[xpu] -f https://developer.intel.com/ipex-whl-stable-xpu
-#pip install gradio mdtex2html 
-#python LLM_demo_v1.0.py
-
-## 如果在任务管理器里CPU大核没有用起来，因为应用变成后端运行了。
-## 你可以试一下用管理员打开Anaconda Powershell Prompt窗口
-
+## 运行代码：
+# python LLM_demo_v1.0_arc.py
 
 ## UI参数说明
 ## 1.温度（Temperature）（数值越高，输出的随机性增加）
