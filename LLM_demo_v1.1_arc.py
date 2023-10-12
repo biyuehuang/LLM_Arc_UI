@@ -385,7 +385,7 @@ if __name__ == '__main__':
                             with gr.Row():
                                 submitBtn = gr.Button("提交", variant="primary",interactive=True)
                                 emptyBtn = gr.Button("清除",interactive=True)
-                            gr.Examples( [ "你好",
+                            gr.Examples( [ "你好","我计划国庆节出去玩，帮我制定一份上海三天旅行规划","我今天计划 跑步、工作、遛狗、去公园、见朋友 ，帮我制定一个合理的时间计划表","我最近经常失眠，晚上睡不着怎么办？","请提供一些寒露节气的养生建议，包含节气简介、饮食建议、起居建议、运动建议等","以第一人称视角介绍太阳的起源和变化","如何提升个人魅力",
 				            "大语言模型对未来的影响的论文",
 				            "条条大路通罗马",
 				            "红烧狮子头",
@@ -416,7 +416,7 @@ if __name__ == '__main__':
                                 emptyBtn2 = gr.Button("清除",interactive=True)
                             gr.Examples( [ "Hello there! How are you doing?",
 				            "What is AI?",
-				            "Add 1 and 3, which gives us",
+				            "Add 1 and 3, which gives us","Please use the tone of SpongeBob SquarePants to teach children how to protect themselves at school.","Help me write a Teacher's Day greeting to my child's elementary school teacher","Please write a short bed time story for children aged 3-8 about animals in the wild to help their intelligence development.",
 				            "Once upon a time, there existed a little girl who liked to have adventures. She wanted to go to places and meet new people and have fun."],
 				            user_input2,chatbot2)
         with gr.Tab("代码生成"):
