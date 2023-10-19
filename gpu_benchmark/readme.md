@@ -11,7 +11,7 @@ test benchmark like 32in/32out and 1024in/128out
 ```
 batch_input = ["string input 1", "string input 2"]
 
-input_ids = tokenizer(batch_input, return_tensors="pt").input_ids.to(device)
+input_ids = tokenizer(batch_input, return_tensors="pt").to(device)
 
 output = llama_model.generate(input_ids, do_sample=False, max_new_tokens=max_new_tokens)
 
