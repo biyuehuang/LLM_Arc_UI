@@ -18,10 +18,7 @@ $ sycl-ls
 
 ```
 batch_input = ["string input 1", "string input 2"]
-
 input_ids = tokenizer(batch_input, return_tensors="pt").to(device)
-
 output = llama_model.generate(input_ids, do_sample=False, max_new_tokens=max_new_tokens)
-
 output_str = tokenizer.batch_decode(output, skip_special_tokens=True)
 ```
