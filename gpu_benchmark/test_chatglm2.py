@@ -21,8 +21,8 @@ if __name__ == '__main__':
     parser.add_argument('-m', '--model-dir', default="/home/adc-a770/llm/chatglm2-6b-int4/", type=str)
    # parser.add_argument('-m', '--model-dir', default="//opt/WD/888_crystal/LLM/chatglm2-6b/", type=str)
     parser.add_argument('--max-new-tokens', default=32, type=int, help="output max new tokens")
-    parser.add_argument('--input-tokens', default='32', type=int)
-    parser.add_argument('--batch-size', default='1', type=int)
+    parser.add_argument('--input-tokens', default=32, type=int)
+    parser.add_argument('--batch-size', default=1, type=int)
     args = parser.parse_args()
     print(args)
 
