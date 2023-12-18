@@ -40,7 +40,7 @@ def stream_chat(model, tokenizer, prompt, max_new_tokens, history=[], device="xp
         yield output_str, history
 
 
-model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\chatglm2-6b-int4"   ## pass
+model_path = "./models/chatglm2-6b-int4"   ## pass
 
 
 prompt = "Once upon a time, there existed a little girl who liked to have adventures. She wanted to go to places and meet new people, and have fun"
