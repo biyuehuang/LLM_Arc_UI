@@ -41,13 +41,7 @@ def stream_chat(model, tokenizer, prompt, max_new_tokens, history=[], device="xp
 
 
 model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\chatglm2-6b-int4"   ## pass
-#model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\chatglm3-6b-int4"   ## pass
-#model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\Qwen-7B-Chat-int4"
-#model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\AquilaChat2-7B-int4"
-#model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\Baichuan2-7B-Chat-int4"
-#model_path = r"C:\\Users\\Administrator\\Documents\\LLM_Demo\\checkpoint\\CodeShell-7B-int4"
-#model_path = r"C:\\Users\\Administrator\\Documents\\LLM_Demo\\checkpoint\\rwkv-4-world-7b"
-#model_path = r"C:\\Users\\MTL822\\Documents\\audiollm\\models\\internlm-chat-7b-8k-int4"
+
 
 prompt = "Once upon a time, there existed a little girl who liked to have adventures. She wanted to go to places and meet new people, and have fun"
 tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
@@ -79,18 +73,6 @@ input_ids = input_ids.to('xpu')
 
 print("finish to xpu")
 
-#model = BenchmarkWrapper(model)
-
-# with torch.inference_mode():
-#     # wamup two times as use ipex
-#     for i in range(7):
-#         st = time.time()
-#         output = model.generate(input_ids, num_beams=1, do_sample=False, max_new_tokens=32)
-#         end = time.time()
-#         print(f'Inference time: {end-st} s')
-#         output_str = tokenizer.decode(output[0], skip_special_tokens=True)
-#         print(output_str)
-
 for _ in range(5):
     response_ = ""
     response = ""
@@ -108,7 +90,6 @@ for _ in range(5):
                 torch.xpu.synchronize()
                 timeFirst = time.time() - timeStart
                 timeFirstRecord = True
-           # yield chatbot, history,  "", ""
         timeCost = time.time() - timeStart
     token_count_input = len(tokenizer.tokenize(prompt))
     token_count_output = len(tokenizer.tokenize(response))
